@@ -1,8 +1,8 @@
 'use client';
 
-import { useActionState } from 'react';            // ✅ з 'react', не з 'react-dom'
+import { useActionState } from 'react';
 import { createProduct } from './actions';
-import { Label } from '@/components/ui/label';     // з shadcn/ui
+import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
@@ -23,13 +23,7 @@ export function AddProductForm() {
                 <Input id="name" name="name" placeholder="Біла футболка" />
             </div>
 
-            <Button
-                type="submit"
-                disabled={pending}
-                aria-busy={pending}
-                size="lg"
-                className="shadow-sm"
-            >
+            <Button type="submit" disabled={pending} aria-busy={pending} size="lg" className="shadow-sm">
                 {pending ? 'Додаю…' : 'Додати'}
             </Button>
 
