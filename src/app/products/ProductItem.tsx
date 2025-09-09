@@ -20,7 +20,7 @@ export function ProductItem({ p }: { p: P }) {
     }, [state]);
 
     return (
-        <li className="flex items-center justify-between gap-3 py-2 border-b">
+        <li className="flex items-center justify-between gap-3 py-2">
             {editing ? (
                 <form action={formAction} className="flex items-end gap-3 flex-1">
                     <input type="hidden" name="id" value={p.id} />
