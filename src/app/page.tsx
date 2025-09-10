@@ -82,18 +82,18 @@ export default async function Page({
                         aria-disabled={page <= 1}
                         data-disabled={page <= 1}
                         tabIndex={page <= 1 ? -1 : 0} // ✅ UX
-                        className="h-9 px-3 rounded-md border bg-background data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50"
+                        className="h-9 px-3 rounded-md border bg-background data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 flex items-center"
                     >
-                        ← Prev
+                        <span>Prev</span>
                     </Link>
                     <Link
                         href={page < totalPages ? qs(page + 1) : '#'}
                         aria-disabled={page >= totalPages}
                         data-disabled={page >= totalPages}
                         tabIndex={page >= totalPages ? -1 : 0} // ✅ UX
-                        className="h-9 px-3 rounded-md border bg-background data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50"
+                        className="h-9 px-3 rounded-md border bg-background data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 flex items-center"
                     >
-                        Next →
+                        <span>Next</span>
                     </Link>
                 </div>
             </div>
