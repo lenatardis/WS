@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import Link from "next/link";
 
 type P = { id: number; sku: string; name: string };
 const initial = { ok: false, message: '' };
@@ -37,7 +38,7 @@ export function ProductItem({ p }: { p: P }) {
                 </form>
             ) : (
                 <>
-                    <div className="flex-1"><span className="font-mono">{p.sku}</span> — {p.name}</div>
+                    <div className="flex-1"> <Link href={`/products/${p.id}`} className="hover:underline"><span className="font-mono">{p.sku}</span> — {p.name}</Link></div>
                     <div className="flex gap-2">
                         <Button variant="outline" onClick={() => setEditing(true)}>Редагувати</Button>
                         <form action={deleteProduct.bind(null, p.id)} onSubmit={(e) => { if (!confirm('Видалити продукт?')) e.preventDefault(); }}>
